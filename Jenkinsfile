@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/usr/local/share/dotnet:${env.PATH}"
+    }
+
     triggers {
         pollSCM('H/2 * * * *')
     }
